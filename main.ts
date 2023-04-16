@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import { Pacman } from './pacman'
 
 const runPacman = (inputPath: string) => {
   const input = fs.readFileSync(inputPath, 'utf-8')
@@ -13,6 +14,11 @@ const runPacman = (inputPath: string) => {
 
   console.log(JSON.stringify(commands, null, 2))
 
+  const pacman = new Pacman()
+
+  for (const command of commands) {
+    console.log(`Handling ${command}`)
+  }
 }
 
 runPacman('input.txt')
