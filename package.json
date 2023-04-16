@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext .ts .",
+    "pacman": "tsc main.ts && tsc pacman.ts && node main.js",
     "test": "jest --runInBand --coverage"
   },
   "repository": {

@@ -1,6 +1,22 @@
 # Code-Challenge-1
 
-Code problem details:
+## Running the solution
+
+The solution uses TypeScript, Node, Jest, ESLint and GitHub Actions
+
+Code can be run using the below commands:
+
+```
+npm i
+
+npm run pacman
+```
+
+`npm run pacman` will run `tsc main.ts && tsc pacman.ts && node main.js` to compile the TypeScript into JavaScript, and run the resulting code.
+
+Code was written while using Node v14.8.2.
+
+## Code problem details:
 
 -----------
 
