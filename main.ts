@@ -23,6 +23,8 @@ const runPacman = (inputPath: string) => {
       pacman.place(command)
     } else if (command === 'MOVE') {
       pacman.move()
+    } else if (command === 'LEFT' || command === 'RIGHT') {
+      pacman.turn(command)
     } else if (command === 'REPORT') {
       pacman.report()
     } else {

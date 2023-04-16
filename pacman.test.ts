@@ -66,3 +66,18 @@ describe('MOVE tests', () => {
     expect(pacman.y).toEqual(0)
   })
 })
+
+describe('TURN tests', () => {
+  const pacman = new Pacman()
+
+  it('Can turn pacman left from north to west across the array \'boundary\'', () => {
+    pacman.place('PLACE 0,0,NORTH')
+    pacman.turn('LEFT')
+    expect(pacman.f).toEqual(3)
+  })
+  it('Can turn pacman right from west to north across the array \'boundary\'', () => {
+    pacman.place('PLACE 0,0,WEST')
+    pacman.turn('RIGHT')
+    expect(pacman.f).toEqual(0)
+  })
+})

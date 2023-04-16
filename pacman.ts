@@ -70,13 +70,16 @@ export class Pacman {
     }
   }
 
+  public turn(command: 'LEFT' | 'RIGHT') {
+    if (command === 'LEFT') {
+      return this.facingIndex === 0 ? this.facingIndex = 3 : this.facingIndex -= 1
+    }
+    if (command === 'RIGHT') {
+      return this.facingIndex === 3 ? this.facingIndex = 0 : this.facingIndex += 1
+    }
+  }
+
   public report() {
-    // return console.log({
-    //   x: this.xPosition,
-    //   y: this.yPosition,
-    //   facing: this.directions[this.facingIndex]
-    // })
-  
     return console.log(`${this.xPosition},${this.yPosition},${this.directions[this.facingIndex]}`)
   }
 }
