@@ -16,6 +16,10 @@ npm run pacman
 
 Code was written while using Node v14.8.2.
 
+Test coverage:
+
+<img width="524" alt="Screenshot 2023-04-16 at 20 42 18" src="https://user-images.githubusercontent.com/13580512/232300483-e9e9b44f-d81e-48ec-859c-d8c5eb43f774.png">
+
 ## Code problem details:
 
 -----------
