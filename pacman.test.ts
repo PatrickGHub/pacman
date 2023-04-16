@@ -22,3 +22,47 @@ describe('PLACE tests', () => {
     expect(() => pacman.place('PLACE 1,2,POTATO')).toThrow(Error)
   })
 })
+
+describe('MOVE tests', () => {
+  const pacman = new Pacman()
+
+  it('Can move pacman north', () => {
+    pacman.place('PLACE 0,0,NORTH')
+    pacman.move()
+    expect(pacman.x).toEqual(0)
+    expect(pacman.y).toEqual(1)
+  })
+
+  it('Can move pacman east', () => {
+    pacman.place('PLACE 0,0,EAST')
+    pacman.move()
+    expect(pacman.x).toEqual(1)
+    expect(pacman.y).toEqual(0)
+  })
+
+  it('Can move pacman south', () => {
+    pacman.place('PLACE 5,5,SOUTH')
+    pacman.move()
+    expect(pacman.x).toEqual(5)
+    expect(pacman.y).toEqual(4)
+  })
+
+  it('Can move pacman west', () => {
+    pacman.place('PLACE 5,5,WEST')
+    pacman.move()
+    expect(pacman.x).toEqual(4)
+    expect(pacman.y).toEqual(5)
+  })
+
+  it('Won\'t move pacman outside of the grid on the x axis', () => {
+    pacman.place('PLACE 5,5,EAST')
+    pacman.move()
+    expect(pacman.x).toEqual(5)
+  })
+
+  it('Won\'t move pacman outside of the grid on the y axis', () => {
+    pacman.place('PLACE 0,0,SOUTH')
+    pacman.move()
+    expect(pacman.y).toEqual(0)
+  })
+})

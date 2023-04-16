@@ -18,6 +18,16 @@ const runPacman = (inputPath: string) => {
 
   for (const command of commands) {
     console.log(`Handling ${command}`)
+
+    if (command.startsWith('PLACE')) {
+      pacman.place(command)
+    } else if (command === 'MOVE') {
+      pacman.move()
+    } else if (command === 'REPORT') {
+      pacman.report()
+    } else {
+      console.log(`Invalid input provided: ${command}`)
+    }
   }
 }
 

@@ -54,4 +54,29 @@ export class Pacman {
     this.yPosition = yInput
     this.facingIndex = this.directions.indexOf(fInput)
   }
+
+  public move() {
+    if (this.facingIndex === 0) {
+      if (this.yPosition < 5) return this.yPosition += 1
+    }
+    if (this.facingIndex === 1) {
+      if (this.xPosition < 5) return this.xPosition += 1
+    }
+    if (this.facingIndex === 2) {
+      if (this.yPosition) return this.yPosition -= 1
+    }
+    if (this.facingIndex === 3) {
+      if (this.xPosition) return this.xPosition -= 1
+    }
+  }
+
+  public report() {
+    // return console.log({
+    //   x: this.xPosition,
+    //   y: this.yPosition,
+    //   facing: this.directions[this.facingIndex]
+    // })
+  
+    return console.log(`${this.xPosition},${this.yPosition},${this.directions[this.facingIndex]}`)
+  }
 }
