@@ -12,13 +12,11 @@ const runPacman = (inputPath: string) => {
   const firstPlaceCommand = commands.findIndex((command: string) => command.startsWith('PLACE'))
   commands = commands.slice(firstPlaceCommand)
 
-  console.log(JSON.stringify(commands, null, 2))
+  console.log(JSON.stringify(commands, null, 2), '\n')
 
   const pacman = new Pacman()
 
   for (const command of commands) {
-    console.log(`Handling ${command}`)
-
     if (command.startsWith('PLACE')) {
       pacman.place(command)
     } else if (command === 'MOVE') {
