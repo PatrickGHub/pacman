@@ -35,4 +35,23 @@ export class Pacman {
   set f(value: number) {
     this.facingIndex = value
   }
+
+  public place(command: string) {
+    const placeArray = command.replace(' ', ',').split(',')
+    const xInput = +placeArray[1]
+    const yInput = +placeArray[2]
+    const fInput = placeArray[3]
+
+    if (!this.directions.includes(fInput)) {
+      throw new Error('Invalid PLACE direction provided (\'NORTH\' | \'EAST\' | \'SOUTH\' | \'WEST\')')
+    }
+
+    if (xInput < 0 || yInput < 0 || xInput > 5 || yInput > 5) {
+      throw new Error('Invalid coordinate provided. x and y values must be between 0 and 5 inclusive')
+    }
+
+    this.xPosition = xInput
+    this.yPosition = yInput
+    this.facingIndex = this.directions.indexOf(fInput)
+  }
 }
